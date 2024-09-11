@@ -5,3 +5,10 @@ touch server.js && npm init -y && npm i express dotenv mongoose && npm i nodemon
 git init && touch .gitignore
 touch .env .env.example
 ```
+
+## Creando carpetas del proyecto
+
+```sh
+mkdir controllers models constants utils 
+mkdir routers middlwares
+```
