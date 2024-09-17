@@ -45,3 +45,19 @@ app.listen(port, () => {
     "dev": "nodemon server.js" // agrego script
 }
 ```
+
+# Hacemos el restore del dump local en la BASE remota
+
+```sh
+mongorestore --uri "mongodb+srv://cluster-it.jslcx1i.mongodb.net/" --username mprincipe --nsInclude integrador_etapa_4.* dump
+```
+
+```sh
+mongoexport --uri "mongodb+srv://cluster-it.jslcx1i.mongodb.net/" --username mprincipe --db bc_bootcamp
+```
+
+# Herramientas Administrativas
+
+<https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.10.0.msi>
+
+<https://www.mongodb.com/docs/database-tools/>

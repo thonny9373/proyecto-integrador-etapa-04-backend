@@ -1,11 +1,15 @@
 import express from 'express'
+
+
 // https://www.npmjs.com/package/dotenv
 import 'dotenv/config'
 import routerProductos from './routers/productos.router.js'
+import getConnection from './utils/get-connection.js'
 
 // ! Variables/Constantes
 const app = express()
 const PORT = process.env.PORT || 2222
+const uri_remota = process.env.URI_MONGO
 
 // ! Middleares
 app.use(express.json()) // Intrepeta el body y lo entiende
@@ -30,4 +34,5 @@ app.all('*', (req, res) => {
 app.listen(PORT, (err) => {
   if ( err ) throw new Error('No se pudo levantar el servidor', err)
   console.log(`Servidor funcionando en: http://localhost:${PORT}`)
+  getConnection(uri_remota)
 })
