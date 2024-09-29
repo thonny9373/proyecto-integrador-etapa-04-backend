@@ -1,16 +1,47 @@
 import mongoose from "mongoose";
 
-// ! Creamos esquema (La descripción de como va a ser nuestro documento)
+const ProductosEsquema = mongoose.Schema(
+    {
+        nombre: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        precio: {
+            type: Number,
+            required: true,
+            min: 0
+        },
+        stock: {
+            type: Number,
+            required: true,
+            min: 0
+        },
+        marca: {
+            type: String,
+            trim: true
+        },
+        categoria: {
+            type: String,
+            trim: true
+        },
+        detalles: {
+            type: String,
+            trim: true
+        },
+        foto: {
+            type: String,
+            trim: true
+        },
+        envio: {
+            type: Boolean,
+            default: false
+        }
+    },
+    {
+        timestamps: true,
+        versionKey: false
+    }
+);
 
-const ProductosEsquema = mongoose.Schema({
-    nombre: String,
-    precio: Number,
-    stock: Number,
-    marca: String,
-    categoria: String,
-    detalles: String,
-    foto: String,
-    envio: Boolean
-})
-
-export default ProductosEsquema
+export default ProductosEsquema;
